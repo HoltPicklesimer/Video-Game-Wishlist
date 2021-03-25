@@ -7,7 +7,7 @@ const systemSchema = mongoose.Schema({
   wanted: { type: Boolean, required: true },
   have: { type: Boolean, required: true },
   imageUrl: { type: String },
-  developer: { type: String, ref: "Developer" },
+  developer: { type: String },
 });
 
 module.exports = mongoose.model("System", systemSchema);
