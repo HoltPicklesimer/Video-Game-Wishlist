@@ -26,6 +26,7 @@
     "mongoose": "^5.12.2",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0",
+    "ng2-dnd": "^5.0.2",
     "nodemon": "^2.0.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

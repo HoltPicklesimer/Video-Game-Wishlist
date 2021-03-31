@@ -1,1 +1,50 @@
-<p>game-detail works!</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>
+          {{ game?.name }}
+          <span *ngIf="game?.have">&#10004;</span>
+          <span *ngIf="game?.wanted">&#10084;</span>
+        </h2>
+        <div class="pull-left">
+          <img src="{{ game?.imageUrl }}" alt="{{ game?.name }}">
+        </div>
+        <div class="pull-right btn-toolbar">
+          <a [routerLink]="['edit']" class="btn btn-primary">Edit</a>
+          <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div>
+        <label>Description: </label>
+        <span> {{game?.description}}</span>
+      </div>
+      <div>
+        <label>Developer: </label>
+        <span> {{game?.developer}}</span>
+      </div>
+      <div>
+        <label>Genre: </label>
+        <span> {{game?.genre}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <div>
+          <label>Supported Systems:</label>
+          <div *ngFor="let system of game?.systems; let i = index">
+            <div>
+              <app-system-item [system]="system"></app-system-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

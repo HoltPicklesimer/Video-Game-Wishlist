@@ -1,1 +1,19 @@
-<p>system-item works!</p>
+<a
+  href="#" class="list-group-item clearfix"
+  [routerLink]="[system?.id]"
+  routerLinkActive="active">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">
+      {{ system?.name }}
+      <span *ngIf="system?.have">&#10004;</span>
+      <span *ngIf="system?.wanted">&#10084;</span>
+    </h4>
+  </div>
+  <span class="pull-right">
+    <img
+      src="{{system?.imageUrl}}"
+      alt="{{ system?.name }}"
+      class="img-responsive"
+      style="max-height: 50px;">
+  </span>
+</a>

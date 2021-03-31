@@ -1,1 +1,105 @@
-<p>system-edit works!</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form id="system-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control required"
+            size="120"
+            max="120"
+            name="name"
+            [ngModel]="system?.name"
+            #name="ngModel"
+            required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            class="form-control"
+            size="150"
+            max="255"
+            name="description"
+            [ngModel]="system?.description"
+            #description="ngModel"
+            >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="developer">Developer:</label>
+          <input
+            type="text"
+            id="developer"
+            class="form-control"
+            size="120"
+            max="120"
+            name="developer"
+            [ngModel]="system?.developer"
+            #developer="ngModel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="imageUrl">Image URL:</label>
+          <input
+            type="text"
+            id="imageUrl"
+            class="form-control"
+            size="150"
+            max="255"
+            name="imageUrl"
+            [ngModel]="system?.imageUrl"
+            #imageUrl="ngModel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+        <label for="have">Owned:</label>
+        <input
+            type="checkbox"
+            id="have"
+            class="form-control"
+            name="have"
+            [ngModel]="system?.have"
+            #have="ngModel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+        <label for="wanted">Wanted:</label>
+          <input
+            type="checkbox"
+            id="wanted"
+            class="form-control"
+            name="wanted"
+            [ngModel]="system?.wanted"
+            #wanted="ngModel">
+        </div>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="(name.touched && !name.valid)">
+        The Name field is required.
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

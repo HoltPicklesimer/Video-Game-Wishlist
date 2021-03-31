@@ -1,1 +1,34 @@
-<p>system-detail works!</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>
+          {{ system?.name }}
+          <span *ngIf="system?.have">&#10004;</span>
+          <span *ngIf="system?.wanted">&#10084;</span>
+        </h2>
+        <div class="pull-left">
+          <img src="{{ system?.imageUrl }}" alt="{{ system?.name }}">
+        </div>
+        <div class="pull-right btn-toolbar">
+          <a [routerLink]="['edit']" class="btn btn-primary">Edit</a>
+          <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div>
+          <label>Description: </label>
+          <span> {{system?.description}}</span>
+        </div>
+        <div>
+          <label>Developer: </label>
+          <span> {{system?.developer}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

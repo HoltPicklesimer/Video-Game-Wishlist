@@ -2,7 +2,7 @@
 var express = require("express");
 var path = require("path");
 var http = require("http");
-var bodyParser = require("body-parser");
+// var bodyParser = require("body-parser"); // remove if working
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
@@ -18,9 +18,10 @@ const systemRoutes = require("./server/routes/systems");
 var app = express(); // create an instance of express
 
 // Tell express to use the following parsers for POST data
-app.use(bodyParser.json());
+app.use(express.json()); // if not working, change to bodyParser
 app.use(
-  bodyParser.urlencoded({
+  // if not working, change to bodyParser
+  express.urlencoded({
     extended: false,
   })
 );
